@@ -24,13 +24,6 @@ using ll = long long;
  * Мөн бүгдийг нь адилхан болгох дээрх үйлдэл хийж дууссаны дараа G-үүд сондгой байранд байвал тэгш болгохын тулд дахиж нэг удаа үйлдэл хийх хэрэгтэй болно.
 */
 
-
-
-
-
-
-
-
 int main(void){
     ll n;
     string s;
@@ -38,20 +31,21 @@ int main(void){
     int ans = 0;
     int prev_loc = 0;
     for(int i=0;i<n;i+=2){
-        if(s[i]=='G' && s[i+1]=='H'){
+        if(s[i]=='G' && s[i+1]=='H'){   //ene udaa GH baigaa uyed
             //loc = 1;
-            if(prev_loc==2){
+            if(prev_loc==2){ //omno ni HG baisan bol 1 uildel hiine.
                 ans++;
             }
             prev_loc = 1;
-        } else if(s[i]=='H' && s[i+1]=='G'){
+        } else if(s[i]=='H' && s[i+1]=='G'){    //ene udaa HG baigaa uyed
             //loc = 2;
-            if(prev_loc==1){
+            if(prev_loc==1){    //omno ni GH baisan bol 1 uildel hiine.
                 ans++;
             }
             prev_loc = 2;
         }
     }
+    //hamgiin suuld bugd GH bolson baival nemelt 1 uildel hiine.
     if(prev_loc==1) ans++;
     cout<<ans<<"\n";
 }
